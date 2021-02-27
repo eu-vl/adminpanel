@@ -5,7 +5,9 @@ import store from './store'
 import './quasar'
 
 Vue.config.productionTip = false
-
+export function sdsd(){
+  sdsdsd
+}
 new Vue({
   router,
   store,
