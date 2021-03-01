@@ -5,6 +5,9 @@ import store from './store'
 import './quasar'
 import VueAxios from 'vue-axios'
 import  axios  from 'axios'
+import VueTypedJs from 'vue-typed-js'
+
+Vue.use(VueTypedJs)
 Vue.use(VueAxios, axios)
 
 Vue.config.productionTip = false

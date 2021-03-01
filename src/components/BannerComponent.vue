@@ -3,7 +3,7 @@
     <q-table
       title="Banners"
       dense
-      :data="data"
+      :data="this.$store.state.banners"
       :columns="columns"
       row-key="name"
     />
@@ -27,10 +27,10 @@ data() {
           headerClasses: 'bg-dark text-white '
         },
         {
-          name: "post_id",
+          name: "post",
           align: "left",
-          label: "POST_ID",
-          field: (row) => row.post_id,
+          label: "POST",
+          field: (row) => row.post.title,
           format: (val) => `${val}`,
           sortable: true,
           headerClasses: 'bg-dark text-white '
@@ -48,53 +48,28 @@ data() {
           name: "description",
           align: "left",
           label: "DESCRIPTION",
-          field: (row) => row.title,
+          field: (row) => row.description,
           format: (val) => `${val}`,
           sortable: true,
           headerClasses: 'bg-dark text-white '
         },
         {
-          name: "img_url",
+          name: "imgUrl",
           align: "left",
           label: "IMG_URL",
-          field: (row) => row.img_url,
+          field: (row) => row.imgUrl,
           format: (val) => `${val}`,
           sortable: true,
           headerClasses: 'bg-dark text-white '
-        }
-      ],
-      data: [
+        },
         {
-          id: 1,
-          title: "Administrator",
-          post_id: 2,
-          description:"sdsadsadsad",
-          img_url: "path/to/.."
-          
-        },
-         {
-          id: 1,
-          title: "Administrator",
-          post_id: 2,
-          description:"sdsadsadsad",
-          img_url: "path/to/.."
-          
-        },
-         {
-          id: 1,
-          title: "Administrator",
-          post_id: 2,
-          description:"sdsadsadsad",
-          img_url: "path/to/.."
-          
-        },
-         {
-          id: 1,
-          title: "Administrator",
-          post_id: 2,
-          description:"sdsadsadsad",
-          img_url: "path/to/.."
-          
+          name: "user",
+          align: "left",
+          label: "USER_NAME",
+          field: (row) => row.post.user.name,
+          format: (val) => `${val}`,
+          sortable: true,
+          headerClasses: 'bg-dark text-white '
         }
       ],
     };

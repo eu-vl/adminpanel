@@ -3,7 +3,7 @@
     <q-table
       title="Posts"
       dense
-      :data="data"
+      :data="this.$store.state.posts"
       :columns="columns"
       row-key="name"
     />
@@ -27,19 +27,29 @@ export default {
           headerClasses: "bg-dark text-white ",
         },
         {
-          name: "category_id",
+          name: "category",
           align: "left",
-          label: "CATEGORY_ID",
-          field: (row) => row.category_id,
+          label: "CATEGORY",
+          field: (row) => row.category.name,
           format: (val) => `${val}`,
           sortable: true,
           headerClasses: "bg-dark text-white ",
         },
         {
-          name: "subcategory_id",
+          name: "subCategory",
           align: "left",
-          label: "SUBCATEGORY_ID",
-          field: (row) => row.subcategory_id,
+          label: "SUBCATEGORY",
+          field: (row) => row.subCategory.name,
+          format: (val) => `${val}`,
+          sortable: true,
+          headerClasses: "bg-dark text-white ",
+        },
+        {
+          name: "user",
+          required: true,
+          label: "USER_NAME",
+          align: "left",
+          field: (row) => row.user.name,
           format: (val) => `${val}`,
           sortable: true,
           headerClasses: "bg-dark text-white ",
@@ -63,23 +73,13 @@ export default {
           headerClasses: "bg-dark text-white ",
         },
         {
-          name: "img_url",
+          name: "imgUrl",
           align: "left",
           label: "IMG_URL",
-          field: (row) => row.img_url,
+          field: (row) => row.imgUrl,
           format: (val) => `${val}`,
           sortable: true,
           headerClasses: "bg-dark text-white ",
-        },
-      ],
-      data: [
-        {
-          id: 1,
-          category_id: 1,
-          subcategory_id: 1,
-          title: "Post-1",
-          description:"Chtoto pro post",
-          img_url: "kartinochka.jpeg",
         },
       ],
     };

@@ -50,10 +50,15 @@ export default {
   },
   methods: {},
   computed: {},
- created(){
-    this.$store.dispatch('GET_ROLES')
-    this.$store.dispatch('GET_USERS')
-  }
+  created() {
+    this.$store.dispatch("GET_ROLES");
+    this.$store.dispatch("GET_USERS");
+    this.$store.dispatch("GET_CATEGORIES");
+    this.$store.dispatch("GET_SUB_CATEGORIES");
+    this.$store.dispatch("GET_POSTS");
+    this.$store.dispatch("GET_BANNERS");
+
+  },
 };
 </script>
 

@@ -3,7 +3,7 @@
     <q-table
       title="SubCategories"
       dense
-      :data="data"
+      :data="this.$store.state.subcategories"
       :columns="columns"
       row-key="name"
     />
@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: "RoleComponent",
+  name: "SubCategoryComponent",
   data() {
     return {
       columns: [
@@ -24,16 +24,16 @@ export default {
           field: (row) => row.id,
           format: (val) => `${val}`,
           sortable: true,
-          headerClasses: 'bg-dark text-white '
+          headerClasses: "bg-dark text-white ",
         },
         {
-          name: "category_id",
+          name: "category",
           align: "left",
-          label: "CATEGORY_ID",
-          field: (row) => row.category_id,
+          label: "CATEGORY",
+          field: (row) => row.category.name,
           format: (val) => `${val}`,
           sortable: true,
-          headerClasses: 'bg-dark text-white '
+          headerClasses: "bg-dark text-white ",
         },
         {
           name: "name",
@@ -42,14 +42,7 @@ export default {
           field: (row) => row.name,
           format: (val) => `${val}`,
           sortable: true,
-          headerClasses: 'bg-dark text-white '
-        },
-      ],
-      data: [
-        {
-          id: 1,
-          name: "Kyiv",
-          category_id: 1,
+          headerClasses: "bg-dark text-white ",
         },
       ],
     };

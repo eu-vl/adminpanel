@@ -3,7 +3,7 @@
     <q-table
       title="Categories"
       dense
-      :data="data"
+      :data="this.$store.state.categories"
       :columns="columns"
       row-key="name"
     />
@@ -35,12 +35,6 @@ export default {
           format: (val) => `${val}`,
           sortable: true,
           headerClasses: "bg-dark text-white ",
-        },
-      ],
-      data: [
-        {
-          id: 1,
-          name: "Ukraine",
         },
       ],
     };

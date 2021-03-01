@@ -20,6 +20,18 @@ export default new Vuex.Store({
     SET_USERS(state, users) {
       state.users = users;
     },
+    SET_CATEGORIES(state, categories) {
+      state.categories = categories;
+    },
+    SET_SUB_CATEGORIES(state, subcategories) {
+      state.subcategories = subcategories;
+    },
+    SET_POSTS(state, posts) {
+      state.posts = posts;
+    },
+    SET_BANNERS(state, banners) {
+      state.banners = banners;
+    },
   },
   actions: {
     GET_ROLES({ commit }) {
@@ -38,7 +50,39 @@ export default new Vuex.Store({
       }).then(function (response) {
         commit("SET_USERS", JSON.parse(JSON.stringify(response.data)))
       })
-    }
+    },
+    GET_CATEGORIES({ commit }) {
+      axios({
+        method: 'get',
+        url: 'http://localhost:8080/categories/get'
+      }).then(function (response) {
+        commit("SET_CATEGORIES", JSON.parse(JSON.stringify(response.data)))
+      })
+    },
+    GET_SUB_CATEGORIES({ commit }) {
+      axios({
+        method: 'get',
+        url: 'http://localhost:8080/subcategories/get'
+      }).then(function (response) {
+        commit("SET_SUB_CATEGORIES", JSON.parse(JSON.stringify(response.data)))
+      })
+    },
+    GET_POSTS({ commit }) {
+      axios({
+        method: 'get',
+        url: 'http://localhost:8080/posts/get'
+      }).then(function (response) {
+        commit("SET_POSTS", JSON.parse(JSON.stringify(response.data)))
+      })
+    },
+    GET_BANNERS({ commit }) {
+      axios({
+        method: 'get',
+        url: 'http://localhost:8080/banners/get'
+      }).then(function (response) {
+        commit("SET_BANNERS", JSON.parse(JSON.stringify(response.data)))
+      })
+    },
   },
   getters: {
     getRoles(state) {
