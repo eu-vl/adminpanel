@@ -3,7 +3,7 @@
     <q-table
       title="Users"
       dense
-      :data="data"
+      :data="this.$store.state.users"
       :columns="columns"
       row-key="name"
     />
@@ -24,18 +24,17 @@ export default {
           field: (row) => row.id,
           format: (val) => `${val}`,
           sortable: true,
-          headerClasses: 'bg-dark text-white '
-
+          headerClasses: "bg-dark text-white ",
         },
         {
-          name: "role_id",
+          name: "role",
           required: true,
           label: "role_id",
           align: "left",
-          field: (row) => row.role_id,
+          field: (row) => row.role.id,
           format: (val) => `${val}`,
           sortable: true,
-          headerClasses: 'bg-dark text-white text-bold'
+          headerClasses: "bg-dark text-white text-bold",
         },
         {
           name: "name",
@@ -45,7 +44,7 @@ export default {
           format: (val) => `${val}`,
           sortable: true,
 
-          headerClasses: 'bg-dark text-white text-bold'
+          headerClasses: "bg-dark text-white text-bold",
         },
         {
           name: "email",
@@ -55,7 +54,7 @@ export default {
           field: (row) => row.email,
           format: (val) => `${val}`,
           sortable: true,
-          headerClasses: 'bg-dark text-white text-bold'
+          headerClasses: "bg-dark text-white text-bold",
         },
         {
           name: "password",
@@ -65,24 +64,7 @@ export default {
           field: (row) => row.password,
           format: (val) => `${val}`,
           sortable: true,
-          headerClasses: 'bg-dark text-white text-bold'
-        },
-      ],
-      data: [
-        {
-          id: 1,
-          role_id: 1,
-          name: "Eugene",
-          email: "qwerty@gmail.com",
-          password: "sobaka"
-        },
-        {
-          id: 2,
-          name: "User",
-          role_id: 2,
-          name: "Vladislav",
-          email: "qwerty@gmail.com",
-          password: "lohLOSHARA"
+          headerClasses: "bg-dark text-white text-bold",
         },
       ],
     };

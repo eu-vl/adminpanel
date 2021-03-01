@@ -10,8 +10,8 @@
 
     <q-drawer v-model="left" side="left" behavior="mobile" overlay>
       <div class="q-pa-sm">
-        <q-list bordered separator dense padding >
-          <q-item clickable v-ripple v-for="link in links" :key="link">
+        <q-list bordered separator dense padding>
+          <q-item clickable v-ripple v-for="link in links" :key="link.id">
             <q-item-section>
               <router-link :to="link.to" class="r_link">{{
                 link.title
@@ -48,13 +48,12 @@ export default {
       ],
     };
   },
-  methods: {
-    printMsg(message) {
-      return message;
-    },
-  },
+  methods: {},
   computed: {},
-  beforeCreate() {},
+ created(){
+    this.$store.dispatch('GET_ROLES')
+    this.$store.dispatch('GET_USERS')
+  }
 };
 </script>
 

@@ -3,7 +3,7 @@
     <q-table
       title="Roles"
       dense
-      :data="data"
+      :data="this.$store.state.roles"
       :columns="columns"
       row-key="name"
     />
@@ -35,22 +35,8 @@ export default {
           sortable: true,
           headerClasses: 'bg-dark text-white '
         },
-      ],
-      data: [
-        {
-          id: 1,
-          name: "Administrator",
-          
-        },
-        {
-          id: 2 ,
-          name: "User",
-          
-        },
-      ],
-    };
-  },
-};
+      ]
+}}};
 </script>
 
 <style>

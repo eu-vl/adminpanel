@@ -1,18 +1,18 @@
 <template>
   <div class="home">
-    Home vue
+  {{getRoles()}}
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
-
+import {mapGetters} from 'vuex';
 export default {
   name: 'Home',
-  components: {
-    
-  }
+  methods:{
+    ...mapGetters({
+      getRoles: 'getRoles'
+    })
+  },
 }
 
 </script>
