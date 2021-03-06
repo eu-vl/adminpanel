@@ -1,5 +1,5 @@
 <template>
-<div class="q-pa-md">
+  <div class="q-pa-md">
     <q-table
       title="Posts"
       dense
@@ -7,6 +7,9 @@
       :columns="columns"
       row-key="name"
     />
+    <div class="link-block">
+      <router-link to="/createpost" class="r_link">Create new post</router-link>
+    </div>
   </div>
 </template>
 
@@ -30,7 +33,7 @@ export default {
           name: "category",
           align: "left",
           label: "CATEGORY",
-          field: (row) => row.category.name,
+          field: (row) => row.category_id.name,
           format: (val) => `${val}`,
           sortable: true,
           headerClasses: "bg-dark text-white ",
@@ -39,7 +42,7 @@ export default {
           name: "subCategory",
           align: "left",
           label: "SUBCATEGORY",
-          field: (row) => row.subCategory.name,
+          field: (row) => row.subCategory_id.name,
           format: (val) => `${val}`,
           sortable: true,
           headerClasses: "bg-dark text-white ",
@@ -49,7 +52,7 @@ export default {
           required: true,
           label: "USER_NAME",
           align: "left",
-          field: (row) => row.user.name,
+          field: (row) => row.user_id.name,
           format: (val) => `${val}`,
           sortable: true,
           headerClasses: "bg-dark text-white ",
@@ -73,10 +76,10 @@ export default {
           headerClasses: "bg-dark text-white ",
         },
         {
-          name: "imgUrl",
+          name: "image_id",
           align: "left",
-          label: "IMG_URL",
-          field: (row) => row.imgUrl,
+          label: "IMAGE ID",
+          field: (row) => row.image_id,
           format: (val) => `${val}`,
           sortable: true,
           headerClasses: "bg-dark text-white ",
@@ -87,5 +90,14 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.r_link {
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+  padding: 10px 20px;
+}
+.link-block {
+  margin-top: 3%;
+}
 </style>

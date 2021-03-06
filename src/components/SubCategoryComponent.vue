@@ -30,7 +30,7 @@ export default {
           name: "category",
           align: "left",
           label: "CATEGORY",
-          field: (row) => row.category.name,
+          field: (row) => row.category_id.name,
           format: (val) => `${val}`,
           sortable: true,
           headerClasses: "bg-dark text-white ",

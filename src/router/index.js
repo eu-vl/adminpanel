@@ -7,6 +7,10 @@ import Category from '../views/Category.vue'
 import SubCategory from '../views/SubCategory.vue'
 import Post from '../views/Post.vue'
 import Banner from '../views/Banner.vue'
+import CreatePost from '../views/CreatePost.vue'
+import CreateUser from '../views/CreateUser.vue'
+
+
 
 Vue.use(VueRouter)
 
@@ -46,6 +50,16 @@ const routes = [
     name:'Banner',
     component: Banner
   },
+  {
+    path: '/createpost',
+    name:'CreatePost',
+    component: CreatePost
+  },
+  {
+    path: '/createuser',
+    name:'CreateUser',
+    component: CreateUser
+  }
 ]
 
 const router = new VueRouter({

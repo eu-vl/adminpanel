@@ -30,7 +30,7 @@ data() {
           name: "post",
           align: "left",
           label: "POST",
-          field: (row) => row.post.title,
+          field: (row) => row.post_id.title,
           format: (val) => `${val}`,
           sortable: true,
           headerClasses: 'bg-dark text-white '
@@ -54,10 +54,10 @@ data() {
           headerClasses: 'bg-dark text-white '
         },
         {
-          name: "imgUrl",
+          name: "image_id",
           align: "left",
-          label: "IMG_URL",
-          field: (row) => row.imgUrl,
+          label: "IMAGE ID",
+          field: (row) => row.image_id,
           format: (val) => `${val}`,
           sortable: true,
           headerClasses: 'bg-dark text-white '
@@ -66,7 +66,7 @@ data() {
           name: "user",
           align: "left",
           label: "USER_NAME",
-          field: (row) => row.post.user.name,
+          field: (row) => row.post_id.user_id.name,
           format: (val) => `${val}`,
           sortable: true,
           headerClasses: 'bg-dark text-white '

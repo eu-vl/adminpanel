@@ -7,6 +7,9 @@
       :columns="columns"
       row-key="name"
     />
+    <div class="link-block">
+  <router-link to="/createuser" class="r_link">Create new user</router-link>
+  </div>
   </div>
 </template>
 
@@ -31,7 +34,7 @@ export default {
           required: true,
           label: "role_id",
           align: "left",
-          field: (row) => row.role.id,
+          field: (row) => row.role_id.id,
           format: (val) => `${val}`,
           sortable: true,
           headerClasses: "bg-dark text-white text-bold",
@@ -73,4 +76,13 @@ export default {
 </script>
 
 <style scoped>
+.r_link {
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+  padding: 10px 20px;
+}
+.link-block {
+  margin-top: 3%;
+}
 </style>

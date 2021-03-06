@@ -90,6 +90,11 @@ export default new Vuex.Store({
     },
     getUsers(state) {
       if (state != null && state.users != null) return state.users;
+    },
+    getCategories(state) {
+      let catName = []
+      state.categories.forEach(c => catName.push(c.name))
+      if (state != null && state.categories != null) return catName;
     }
   }
 })
