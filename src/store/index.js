@@ -34,14 +34,13 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    GET_ROLES({ commit }) {
-      axios({
+    async GET_ROLES({ commit }) {
+      const response = await axios({
         method: 'get',
         url: 'http://localhost:8080/roles/getAll',
-      })
-        .then(function (response) {
-          commit("SET_ROLES", JSON.parse(JSON.stringify(response.data)))
-        })
+      });
+      
+      commit("SET_ROLES", JSON.parse(JSON.stringify(response.data)))
     },
     GET_USERS({ commit }) {
       axios({
@@ -72,6 +71,7 @@ export default new Vuex.Store({
         method: 'get',
         url: 'http://localhost:8080/posts/get'
       }).then(function (response) {
+        console.log(response)
         commit("SET_POSTS", JSON.parse(JSON.stringify(response.data)))
       })
     },
@@ -83,6 +83,24 @@ export default new Vuex.Store({
         commit("SET_BANNERS", JSON.parse(JSON.stringify(response.data)))
       })
     },
+    CREATE_POST(formData) {
+      axios({
+        method: 'post',
+        url: 'http://localhost:8080/posts/add',
+        data: {
+          formData
+        },
+        headers: {
+          'Content-Type': 'multipart/form-data'
+      }
+      })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
   },
   getters: {
     getRoles(state) {

@@ -12,7 +12,6 @@ components: {CategoryComponent}
 }
 </script>
 
-<style
-CategoryComponent>
+<style>
 
 </style>

@@ -3,17 +3,20 @@
     <q-table
       title="Banners"
       dense
-      :data="this.$store.state.banners"
+      :data="$store.state.banners"
       :columns="columns"
       row-key="name"
     />
+    <div class="link-block">
+      <router-link to="/createbanner" class="r_link">Create new banner</router-link>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-name: "BannerComponent",
-data() {
+  name: "BannerComponent",
+  data() {
     return {
       columns: [
         {
@@ -24,16 +27,7 @@ data() {
           field: (row) => row.id,
           format: (val) => `${val}`,
           sortable: true,
-          headerClasses: 'bg-dark text-white '
-        },
-        {
-          name: "post",
-          align: "left",
-          label: "POST",
-          field: (row) => row.post_id.title,
-          format: (val) => `${val}`,
-          sortable: true,
-          headerClasses: 'bg-dark text-white '
+          headerClasses: "bg-dark text-white ",
         },
         {
           name: "title",
@@ -42,7 +36,7 @@ data() {
           field: (row) => row.title,
           format: (val) => `${val}`,
           sortable: true,
-          headerClasses: 'bg-dark text-white '
+          headerClasses: "bg-dark text-white ",
         },
         {
           name: "description",
@@ -51,32 +45,22 @@ data() {
           field: (row) => row.description,
           format: (val) => `${val}`,
           sortable: true,
-          headerClasses: 'bg-dark text-white '
+          headerClasses: "bg-dark text-white ",
         },
-        {
-          name: "image_id",
-          align: "left",
-          label: "IMAGE ID",
-          field: (row) => row.image_id,
-          format: (val) => `${val}`,
-          sortable: true,
-          headerClasses: 'bg-dark text-white '
-        },
-        {
-          name: "user",
-          align: "left",
-          label: "USER_NAME",
-          field: (row) => row.post_id.user_id.name,
-          format: (val) => `${val}`,
-          sortable: true,
-          headerClasses: 'bg-dark text-white '
-        }
       ],
     };
   },
-}
+};
 </script>
 
-<style>
-
+<style scoped>
+.r_link {
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+  padding: 10px 20px;
+}
+.link-block {
+  margin-top: 3%;
+}
 </style>

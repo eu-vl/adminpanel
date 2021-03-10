@@ -7,6 +7,7 @@
       :columns="columns"
       row-key="name"
     />
+    
   </div>
 </template>
 

@@ -9,6 +9,7 @@ import Post from '../views/Post.vue'
 import Banner from '../views/Banner.vue'
 import CreatePost from '../views/CreatePost.vue'
 import CreateUser from '../views/CreateUser.vue'
+import CreateBanner from '../views/CreateBanner.vue'
 
 
 
@@ -59,6 +60,11 @@ const routes = [
     path: '/createuser',
     name:'CreateUser',
     component: CreateUser
+  },
+  {
+    path: '/createbanner',
+    name:'CreateBanner',
+    component: CreateBanner
   }
 ]
 
